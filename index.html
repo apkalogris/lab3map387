@@ -16,8 +16,8 @@
     <body>
         <div id="map" style="height: 500px"></div>
 
-        <script type="text/javascript">
-
+    <script type="text/javascript" src="data.js"></script>
+		
           var map = L.map('map', {
               center: [51.48,-0.07],
               zoom: 10
@@ -27,7 +27,7 @@
            attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
            maxZoom: 11,
            minZoom: 5
-         }).addTo(map);
+         }).L.geoJson(data).addTo(map);
 
         </script>
    </body>
