@@ -111,7 +111,7 @@ geojson = L.geoJson(data, {
     style:style,
     onEachFeature: onEachFeature
 }).bindPopup(function (layer){
-    return layer.feature.properties.NAME 
+    return layer.feature.properties.community 
            + '<p style="color:purple">' + layer.feature.properties.PopDen.toString() + ' people/square mile </p>';       
 }).addTo(map);
 
