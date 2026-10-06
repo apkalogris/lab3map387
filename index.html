@@ -53,11 +53,11 @@
 
 
 function getColor(value) {
-    return value > 12500 ? '#a63603':
-           value > 8000  ? '#e6550d':
-           value > 6000  ? '#fd8d3c':
-           value > 2000  ? '#fdbe85':
-                         '#feedde';
+    return value > 12500 ? '#08519c':
+           value > 8000  ? '#3182bd':
+           value > 6000  ? '#6baed6':
+           value > 2000  ? '#bdd7e7':
+                         '#eff3ff';
 }
 
 function style(feature){
@@ -112,7 +112,7 @@ geojson = L.geoJson(data, {
     onEachFeature: onEachFeature
 }).bindPopup(function (layer){
     return layer.feature.properties.community 
-           + '<p style="color:purple">' + layer.feature.properties.PopDen.toString() + ' people/square mile </p>';       
+           + '<p style="color:#6baed6">' + layer.feature.properties.PopDen.toString() + ' people/square mile </p>';       
 }).addTo(map);
 
 			
