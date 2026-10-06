@@ -62,10 +62,10 @@ function getColor(value) {
 
 function style(feature){
     return {
-        fillColor: getColor(feature.properties.pop_den),   // pop_den is the field name for the population density data
+        fillColor: getColor(feature.properties.PopDen),   // pop_den is the field name for the population density data
         weight: 2,
         opacity: 1,
-        color: 'gray',
+        color: 'white',
         fillOpacity: 0.9
     };
 }
@@ -111,7 +111,7 @@ geojson = L.geoJson(data, {
     onEachFeature: onEachFeature
 }).bindPopup(function (layer){
     return layer.feature.properties.NAME 
-           + '<p style="color:purple">' + layer.feature.properties.pop_den.toString() + ' people/hectare </p>';       
+           + '<p style="color:purple">' + layer.feature.properties.PopDen.toString() + ' people/square mile </p>';       
 }).addTo(map);
 
 			
@@ -120,7 +120,7 @@ var legend = L.control({position: 'bottomright'}); // Try the other three corner
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'legend'),
-        grades = [0, 32, 53, 87, 139]; // The break values to define the intervals of population, note we begin from 0 here
+        grades = [0, 3000, 5000, 7500, 12500]; // The break values to define the intervals of population, note we begin from 0 here
 
     div.innerHTML = '<b>Population Density <br> 2011 <br></b>'; // The legend title (HTML-based), in this case it's Population Density 2011
 
